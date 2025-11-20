@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="min-h-screen bg-cover bg-[url(./assets/image.png)]">
       <Routes>
-        <Route path="/" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/helpdesk" element={<Login/>}/>
+        <Route path="/helpdesk/register" element={<Register/>}/>
       </Routes>
     </div>    
   )
