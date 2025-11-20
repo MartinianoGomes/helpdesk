@@ -81,7 +81,7 @@ function Register() {
                             <h3 className="text-[12px] text-[var(--gray-300)]">Entre agora mesmo</h3>
                         </div>
 
-                        <Link to="/" className="inline-block text-center w-full text-black bg-gray-200 py-2 hover:bg-gray-600 hover:text-white rounded-md cursor-pointer transition font-bold">Acessar conta</Link>
+                        <Link to="/helpdesk/" className="inline-block text-center w-full text-black bg-gray-200 py-2 hover:bg-gray-600 hover:text-white rounded-md cursor-pointer transition font-bold">Acessar conta</Link>
                     </div>
                 </div>
             </div>
