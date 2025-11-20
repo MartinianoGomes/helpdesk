@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Helpdesk — Frontend
 
-Currently, two official plugins are available:
+Projeto frontend do módulo "helpdesk" — aplicativo de exemplo em React + Vite + TypeScript. Fornece telas básicas de login e registro e serve como base para um painel simples de atendimento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Status:** Em desenvolvimento
 
-## React Compiler
+**Tecnologias:** React, TypeScript, Vite, TailwindCSS (dependências presentes), ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Requisitos:**
+- Node.js 18+ (recomendado)
+- npm ou pnpm
 
-## Expanding the ESLint configuration
+## Como rodar (desenvolvimento)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Instale dependências:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Inicie o servidor de desenvolvimento:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+O Vite iniciará um servidor local (por padrão `http://localhost:5173`).
+
+## Scripts úteis
+
+- `npm run dev` — inicia o modo desenvolvimento (Vite).
+- `npm run build` — compila a aplicação para produção (`tsc -b && vite build`).
+- `npm run preview` — serve a versão de produção gerada.
+- `npm run lint` — executa o ESLint no projeto.
+
+## Estrutura do projeto (resumo)
+
+- `index.html` — entrada HTML do Vite.
+- `src/main.tsx` — bootstrap da aplicação.
+- `src/App.tsx` — componente principal.
+- `src/Login.tsx` e `src/Register.tsx` — telas de autenticação.
+- `src/assets/` — imagens/recursos estáticos.
+- `vite.config.ts` — configuração do Vite.
+- `tsconfig.json` — configuração TypeScript.
+
+## Dependências principais (conforme `package.json`)
+
+- `react`, `react-dom`
+- `react-hook-form` — formulários reativos.
+- `react-router` — roteamento.
+- `tailwindcss`, `postcss`, `autoprefixer` — (configurar se desejar usar)
+
+## Notas de desenvolvimento
+
+- O projeto já inclui dependências relacionadas ao Tailwind; se for usar Tailwind ative e configure os arquivos `tailwind.config.*` e `postcss.config.*` conforme necessário.
+- Se quiser adicionar env vars para API, crie um arquivo `.env` ou `.env.local` e use a convenção `VITE_` para variáveis expostas ao cliente.
+
+## Contribuição
+
+Pull requests são bem-vindos. Para mudanças maiores, abra uma issue descrevendo a proposta antes de implementar.
+
+## Licença
+
+Nenhuma licença foi adicionada a este repositório. Se desejar publicar sob uma licença, adicione um arquivo `LICENSE` apropriado.
+
+---
+Arquivo gerado automaticamente pelo assistente. Para ajustes, edite `helpdesk/README.md`.
+
